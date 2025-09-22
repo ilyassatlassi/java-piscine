@@ -2,6 +2,9 @@ public class ComputeArray {
     public static int[] computeArray(int[] array) {
         // your code here
         int[] res = new int[array.length];
+        if (array == null) {
+            return res;
+        }
         for (int i = 0; i < array.length; i++) {
             int minOne = -1;
             int minTwo = -2;
