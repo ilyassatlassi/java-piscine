@@ -6,9 +6,13 @@ public class ComputeArray {
             if (array[i] % 3 == 0) {
                 res[i] = array[i] * 5;
             } else if ((array[i] - 1) % 3 == 0) {
-                res[i] = array[i] + 7;
+                if (array[i] < 0) {
+                    res[i] = array[i] - 7;
+                } else {
+                    res[i] = array[i] + 7;
+                }
             } else if ((array[i] - 2) % 3 == 0) {
-                res[i] = array[i] ;
+                res[i] = array[i];
             }
         }
         return res;
