@@ -1,9 +1,17 @@
 public class StringReplace {
-    public static String replace(String s, CharSequence target, CharSequence replacement) {
+    public static String replace(String s, String target, String replacement) {
         // your code here
         if (s == null || target == null || replacement == null) {
-           return ""; 
+            return "";
         }
-        return s.replace(target, replacement); 
+        return s.replace(target, replacement);
+    }
+
+    public static String replace(String s, char target, char replacement) {
+        // your code here
+        if (s == null ) {
+            return "";
+        }
+        return s.replace(target, replacement);
     }
 }
