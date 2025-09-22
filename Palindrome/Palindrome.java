@@ -7,7 +7,7 @@ public class Palindrome {
         String rev = new StringBuilder(s).reverse().toString();
         // System.out.println(rev);
         // System.out.println(s);
-        if (rev.equals(s)  ) {
+        if (rev.equalsIgnoreCase(s)  ) {
             return true;
         }
         return false;
