@@ -3,15 +3,21 @@ public class ComputeArray {
         // your code here
         int[] res = new int[array.length];
         for (int i = 0; i < array.length; i++) {
+            int minOne = -1;
+            int minTwo = -2;
+            if (array[i] < 0) {
+               minOne = 1; 
+               minTwo = 2;
+            }
             if (array[i] % 3 == 0) {
                 res[i] = array[i] * 5;
-            } else if ((array[i] - 1) % 3 == 0) {
-                if (array[i] < 0) {
-                    res[i] = array[i] - 7;
-                } else {
+            } else if ((array[i] + minOne) % 3 == 0) {
+                // if (array[i] < 0) {
+                //     res[i] = array[i] - 7;
+                // } else {
                     res[i] = array[i] + 7;
-                }
-            } else if ((array[i] - 2) % 3 == 0) {
+                // }
+            } else if ((array[i] + minTwo) % 3 == 0) {
                 res[i] = array[i];
             }
         }
