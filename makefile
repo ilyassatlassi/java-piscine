@@ -20,4 +20,6 @@ new:
 	fi
 	@mkdir "$(ex)"
 	@touch "$(ex)"/"$(ex)".java "$(ex)"/ExerciseRunner.java 
+
+
  
