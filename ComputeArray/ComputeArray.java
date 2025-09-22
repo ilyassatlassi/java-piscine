@@ -6,8 +6,8 @@ public class ComputeArray {
             int minOne = -1;
             int minTwo = -2;
             if (array[i] < 0) {
-                minOne = 1;
-                minTwo = 2;
+                // minOne = 1;
+                // minTwo = 2;
                 res[i] = array[i];
                 continue;
             }
