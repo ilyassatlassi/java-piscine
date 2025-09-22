@@ -2,7 +2,7 @@ public class ComputeArray {
     public static int[] computeArray(int[] array) {
         // your code here
         if (array == null) {
-            return new int[0];
+            return null;
         }
         int[] res = new int[array.length];
         for (int i = 0; i < array.length; i++) {
