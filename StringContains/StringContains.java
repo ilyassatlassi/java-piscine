@@ -1,9 +1,10 @@
 public class StringContains {
     public static boolean isStringContainedIn(String subString, String s) {
-        // your code here
-        if (s != null) {
-            return s.contains(subString);
+        if (s == null || subString == null) {
+
+            return false;
         }
-        return false;
+        // your code here
+        return s.contains(subString);
     }
 }
