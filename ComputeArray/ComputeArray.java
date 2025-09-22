@@ -8,8 +8,8 @@ public class ComputeArray {
             if (array[i] < 0) {
                 minOne = 1;
                 minTwo = 2;
-                // res[i] = array[i];
-                // continue;
+                res[i] = array[i];
+                continue;
             }
             if (array[i] % 3 == 0) {
                 res[i] = array[i] * 5;
