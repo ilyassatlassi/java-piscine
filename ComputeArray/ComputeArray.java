@@ -5,11 +5,11 @@ public class ComputeArray {
         for (int i = 0; i < array.length; i++) {
             int minOne = -1;
             int minTwo = -2;
-            if (array[i] < 0) {
-                // minOne = 1;
-                // minTwo = 2;
+            if (array[i] < -1) {
+                minOne = 1;
+                minTwo = 2;
                 res[i] = array[i];
-                continue;
+                // continue;
             }
             if (array[i] % 3 == 0) {
                 res[i] = array[i] * 5;
