@@ -6,18 +6,18 @@ public class ComputeArray {
             int minOne = -1;
             int minTwo = -2;
             if (array[i] < 0) {
-               minOne = 1; 
-               minTwo = 2;
+                minOne = 1;
+                minTwo = 2;
             }
             if (array[i] % 3 == 0) {
                 res[i] = array[i] * 5;
             } else if ((array[i] + minOne) % 3 == 0) {
                 // if (array[i] < 0) {
-                //     res[i] = array[i] - 7;
+                // res[i] = array[i] - 7;
                 // } else {
-                    res[i] = array[i] + 7;
+                res[i] = array[i] + 7;
                 // }
-            } else if ((array[i] + minTwo) % 3 == 0) {
+            } else /* if ((array[i] + minTwo) % 3 == 0) */ {
                 res[i] = array[i];
             }
         }
