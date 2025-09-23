@@ -6,8 +6,8 @@ public class ExerciseRunner {
         PrintStream printStream = new PrintStream(outputStream);
 
         var defaultOut = System.out;
-
         System.setOut(printStream);
+        // System.out.println("hfdhf");
         SortArgs.sort(new String[] { "4", "2", "1", "3" });
         System.setOut(defaultOut);
 
