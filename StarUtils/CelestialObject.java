@@ -91,4 +91,9 @@ public class CelestialObject {
     public void setZ(double z) {
         this.z = z;
     }
+
+    public boolean equals(Star other) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'equals'");
+    }
 }

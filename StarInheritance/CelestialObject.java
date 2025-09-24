@@ -7,6 +7,18 @@ public class CelestialObject {
     public double z;
     public String name;
 
+    public CelestialObject() {
+        this("Soleil", 0, 0, 0);
+    }
+
+    public CelestialObject(String name, double x, double y, double z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.name = name;
+
+    }
+
     public static double getDistanceBetween(CelestialObject a, CelestialObject b) {
         double dx = b.x - a.x;
         double dy = b.y - a.y;
@@ -48,17 +60,6 @@ public class CelestialObject {
         return Objects.hash(name, x, y, z);
     }
 
-    public CelestialObject() {
-        this("Soleil", 0, 0, 0);
-    }
-
-    public CelestialObject(String name, double x, double y, double z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-        this.name = name;
-
-    }
 
     public String getName() {
         return name;
