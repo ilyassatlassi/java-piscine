@@ -13,13 +13,13 @@ test:
 	@docker run --rm -e EXERCISE=$(pr) -v $(PWD)/student:/app/student ghcr.io/01-edu/test-java:latest
 	@rm -rf student
 new:
-
 	@if [ -z "$(ex)" ]; then \
 		@echo "Please specify the exercise name: make test ex=ExerciseName"; \
 		exit 1; \
 	fi
 	@mkdir "$(ex)"
-	@touch "$(ex)"/"$(ex)".java "$(ex)"/ExerciseRunner.java 
+# 	@touch "$(ex)"/"$(ex)".java "$(ex)"/ExerciseRunner.java 
+	@touch "$(ex)"/CelestialObject.java "$(ex)"/ExerciseRunner.java 
 
 
  
