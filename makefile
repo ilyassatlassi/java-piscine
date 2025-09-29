@@ -19,7 +19,9 @@ new:
 	fi
 	@mkdir "$(ex)"
 # 	@touch "$(ex)"/"$(ex)".java "$(ex)"/ExerciseRunner.java 
-	@touch "$(ex)"/CelestialObject.java "$(ex)"/ExerciseRunner.java 
+# 	@touch "$(ex)"/CelestialObject.java "$(ex)"/ExerciseRunner.java 
+
+	@touch  "$(ex)"/ExerciseRunner.java 
 
 
  
