@@ -19,7 +19,10 @@ public class AnagramChecker {
                 return false;
 
             } else {
-                
+                if (res.get(str2.charAt(i)) == 0) {
+                  return false;
+                }
+
                 res.put(str1.charAt(i), res.get(str1.charAt(i)) - 1);
             }
 
