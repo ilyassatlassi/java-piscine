@@ -19,15 +19,19 @@ public class Sorcerer extends Character implements Healer {
     @Override
     public String toString() {
         if (getCurrentHealth() == 0) {
-            return getName() + " is a dead sorcerer. So bad, it could heal " + this.healCapacity + " HP.";
+            return getName() + " is a dead sorcerer. So bad, it could heal " + this.healCapacity + " HP."+ " He has the weapon " + this.getWeapon().toString() ;
         }
         return getName() + " is a sorcerer with " + getCurrentHealth() + " HP. It can heal " + getHealCapacity()
-                + " HP.";
+                + " HP."+ " He has the weapon " + this.getWeapon().toString() ;
     }
 
     @Override
     public void attack(Character par) {
         this.heal(this);
+        if (this.getWeapon() != null) {
+            par.takeDamage(this.getWeapon().getDamage());
+            return;
+        }
         par.takeDamage(10);
     }
 

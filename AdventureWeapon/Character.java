@@ -16,6 +16,10 @@ abstract public class Character {
         allCharacters.add(this);
     }
 
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
     public int getMaxHealth() {
         return maxHealth;
     }
