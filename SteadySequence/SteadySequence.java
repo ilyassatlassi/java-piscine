@@ -7,12 +7,22 @@ public class SteadySequence {
         // Implementation to find the length of the longest consecutive elements
         // sequence
         Set<Integer> seen = new HashSet<>();
-        int left, maxlength = 0;
-        for (int rigth = 0; rigth < nums.length; rigth++) {
-            seen.add(nums[rigth]);
-            while (seen.contains(nums[rigth])) {
-            }
+        int  maxLength = 0;
+        for (int i = 0; i < nums.length; i++) {
+            seen.add(nums[i]);
         }
-        return seen.size();
+        for (int i = 0; i < nums.length; i++) {
+            // seen.add(nums[i])
+            int curr = nums[i];
+            int currLentgh = 1;
+            while(seen.contains(curr +1)){
+                // maxLength++;
+                currLentgh++;
+                curr++;
+            }
+            maxLength = Math.max(maxLength, currLentgh );
+        }
+
+        return maxLength;
     }
 }

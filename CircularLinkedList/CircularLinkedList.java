@@ -24,11 +24,13 @@ public class CircularLinkedList implements LinkedList {
         int count = 0;
         Node curr = head;
         while (count != index) {
-            curr = next(curr);
-            count++;
             if (count == index) {
+            curr = next(curr);
+
                 return curr.value;
             }
+            curr = next(curr);
+            count++;
         }
         return count;
     }
