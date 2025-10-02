@@ -6,80 +6,116 @@ public class DoubleLinkedList implements LinkedList {
         int value;
         Node next;
         Node prev;
-
-        Node(int value) {
+        public Node(int value) {
             this.value = value;
             this.next = null;
             this.prev = null;
-
         }
+    
     }
 
     @Override
     public int at(int index) {
         // Implementation for accessing an element by its index
-        Node curr = head;
-        int count = 0;
-        while (curr != null) {
-            if (count == index) {
-                return curr.value;
-            }
-            curr = next(curr);
-            count++;
+         if(index >= size() || index < 0) {
+            return -1;
         }
-        count = -1;
-        return count;
+          int count = 0;
+          int value = 0;
+        if(index == 0 ){
+            return head.value;
+        }
+        if(index == size() -1){
+           return tail.value;
+        }
+        if(index <=(size() -1 )/2 ){
+            count = 1;
+            Node curr = next(head);
+            while(curr != null){
+                if(count == index){
+                    value = curr.value;
+                    break;
+                }
+                count++;
+                curr= next(curr);
+            }
+        }else {
+            count = size() - 2;
+            Node curr = prev(tail);
+            while(curr != null){
+                if(count == index){
+                    value = curr.value;
+                    break;
+                }
+                count--;
+                curr= prev(curr);
+            }
+        }
+        return value;
+
     }
 
     @Override
     public void add(int value) {
         // Implementation for adding an element at the end of the list
-        if (head == null) {
-            head = new Node(value);tmp
+        if(head == null) {
+            head = new Node(value);
             return;
         }
-
-        if (tail == null) {
+        if(tail == null) {
             tail = new Node(value);
-            head.next = tail;
             tail.prev = head;
+            head.next = tail;
             return;
         }
-        Node newNode = new Node(value);
-        newNode.prev = tail;
-        tail.next = newNode;
-        tail = newNode;
-
+        Node curr = new Node(value);
+        tail.next = curr;
+        curr.prev = tail;
+        tail = curr;
     }
 
     @Override
     public void remove(int index) {
         // Implementation for removing an element by its index
-        if (size() <= index) {
+        if(index >= size()) {
             return;
         }
-        if (index == 0) {
+        int count = 0;
+        if(index == 0 ){
             head = head.next;
+            head.prev = null;
             return;
         }
-        if (size() == index + 1) {
+
+        if(index == size() -1){
             tail = tail.prev;
             tail.next = null;
             return;
         }
-        Node curr = head.next;
-        int count = 1;
-        while (curr != null) {
-            if (count == index) {
-                // Node tmp = curr.prev;
-                curr.prev.next = curr.next;
-                curr.next.prev = curr.prev;
-
-                break;
+        if(index <= (size() - 1) /2 ){
+            count = 1;
+            Node curr = next(head);
+            while(curr != null){
+                if(count == index){
+                    curr.next.prev = curr.prev;
+                    curr.prev.next = curr.next;
+                    break;
+                }
+                count++;
+                curr= next(curr);
             }
-            curr = next(curr);
-            count++;
-
+        }else {
+            count = size() - 2;
+            Node curr = prev(tail);
+            while(curr != null){
+                if(count == index){
+                    curr.next.prev = curr.prev;
+                    curr.prev.next = curr.next;
+                    break;
+                }
+                count--;
+                curr= prev(tail);
+            }
         }
     }
 
@@ -87,12 +123,12 @@ public class DoubleLinkedList implements LinkedList {
     public int size() {
         // Implementation for getting the size of the list
         Node curr = head;
-        int size = 0;
-        while (curr != null) {
-            curr = curr.next;
-            size++;
+        int count = 0;
+        while( curr != null) {
+            count++;
+            curr =curr.next;
         }
-        return size;
+        return count;
     }
 
     private Node next(Node node) {
@@ -103,7 +139,6 @@ public class DoubleLinkedList implements LinkedList {
 
     private Node prev(Node node) {
         // Implementation for going to the prev
-
         System.out.println("Go to previous node");
         return node.prev;
     }
